@@ -36,6 +36,8 @@ services:
     restart: always
 
 
+# Script do Ingestion Gateway (PySpark)
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json, current_timestamp
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType
@@ -82,6 +84,8 @@ query_silver = df_silver.writeStream \
     .option("checkpointLocation", "/mnt/checkpoints/industrial_silver") \
     .toTable("industrial_db.silver_trusted_telemetry")
 
+
+# Consulta SQL para Consolidação Analítica (Gold)
 
 CREATE OR REPLACE TABLE industrial_db.gold_factory_oee_analytics AS
 WITH metrics_base AS (
