@@ -55,3 +55,9 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 NAMES                     STATUS              PORTS
 mqtt_industrial_broker    Up 2 hours          0.0.0.0:1883->1883/tcp, 0.0.0.0:8883->8883/tcp
 influx_telemetria_local   Up 2 hours          0.0.0.0:8086->8086/tcp
+
+# Move o arquivo para dentro da pasta docs
+git mv 3_2_INFRAESTRUTURA_DOCKER.md docs/3_2_INFRAESTRUTURA_DOCKER.md
+
+# Comita a movimentação
+git commit -m "chore: mover infraestrutura docker para o diretorio docs"
