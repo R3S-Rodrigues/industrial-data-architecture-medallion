@@ -69,15 +69,3 @@ Abaixo está o exemplo real do payload gerado pelo IoT Gateway do Kepware e inje
 }
 
 
----
-
-###  Passo 2: Atualizar o seu arquivo principal `3_PASSO_A_PASSO_PRATICO.md`
-
-No seu arquivo de índice ou guia do projeto, insira a nova etapa imediatamente antes da infraestrutura do Lakehouse para manter a coerência cronológica do pipeline de dados:
-
-```markdown
-###  [Etapa 3.1: Conectividade Industrial Edge (Kepware MQTT Gateway)](./3_1_INGESTAO_EDGE_KEPWARE.md)
-* Mapeamento de tags de PLCs em chão de fábrica, modelagem estruturada ISA-95, conversão de protocolos operacionais para MQTT e design de JSON Payload industrial.
-
-###  [Etapa 3.2: Criação da Infraestrutura do Data Lakehouse (Databricks)](./3_2_INFRAESTRUTURA_LAKEHOUSE.md)
-* Provisionamento de catálogos, esquemas e volumes via Unity Catalog. Engenharia das camadas Medallion (Bronze, Silver e Gold) otimizadas com Delta Lake[cite: 1].
