@@ -69,3 +69,45 @@ Abaixo está o exemplo real do payload gerado pelo IoT Gateway do Kepware e inje
 }
 
 
+
+## 3.2. Diagrama de Arquitetura da Borda
+![Conectividade Industrial Edge](./Arquitetura_Ingestão_Edge_Kepware.png)
+
+# 3.2.1. Conectividade Industrial Edge: Kepware KEPServerEX & Gateway MQTT para Azure Databricks
+
+Esta etapa detalha a camada de aquisição de dados na borda (Edge), mapeando o fluxo completo desde os ativos físicos do chão de fábrica até a conversão e direcionamento seguro para processamento analítico em nuvem.
+
+---
+
+## 3.2.2. Diagrama de Arquitetura da Borda (Conectividade Industrial)
+
+Abaixo está a representação visual do ecossistema de dados unificado, demonstrando o fluxo contínuo de conversão OT/TI:
+
+![Conectividade Industrial Edge](./Conectividade_Industrial_Edge_KEPServerEX.png)
+
+---
+
+## 3.2.3. Mapeamento dos Componentes do Pipeline
+
+Com base na arquitetura desenhada, o fluxo de dados é segregado em três grandes domínios operacionais:
+
+### 1. Chão de Fábrica (Fontes de Dados)
+A camada operacional é composta por CLPs, sensores IoT e sistemas industriais SCADA de múltiplos protocolos nativos:
+* **Protocolos Suportados:** Modbus TCP, Siemens S7 e Ethernet/IP.
+* **Padronização de Tags (Norma ISA-95):** Para garantir consistência semântica e governança, os pontos de telemetria utilizam a topologia hierárquica `Planta_Setor_Ativo_Componente`. Exemplos de medições mapeadas:
+  * `Sensor_Temperatura_Mancal`
+  * `Status_Operacional`
+  * `Contador_Pulsos_Producao`
+  * `Alarme_Pressao_Critica`
+
+### 2. KEPWARE KEPServerEX (Camada de Conversão Borda/Edge)
+O software atua como a engine de interoperabilidade centralizada na borda, dividida em dois núcleos funcionais:
+* **OPC UA Server (Norma IEC 62541):** Concentra a comunicação vinda dos dispositivos de automação através de canais criptografados com Broker TLS Seguro, fornecendo resiliência local por meio de mecanismos de **Store & Forward** (para bufferização em caso de instabilidade na rede).
+* **IoT Gateway MQTT:** Executa a efetiva **Conversão OT / MQTT**, encapsulando as variáveis industriais em payloads leves formato JSON de alta eficiência.
+
+### 3. Cloud: Azure Databricks (Recepção e Processamento)
+Os dados empacotados na borda são transmitidos via conexão cifrada segura (MQTTS) para o ambiente de nuvem, habilitando as seguintes capacidades no Lakehouse:
+* **Recepção Segura:** Endpoints expostos de forma controlada com autenticação rigorosa.
+* **Processamento em Tempo Real:** Ingestão contínua em buffers de streaming para tratamento imediato da telemetria.
+* **Análise Escalável:** Disponibilização dos conjuntos de dados limpos para algoritmos de engenharia, dashboards analíticos e modelos preditivos.
+
