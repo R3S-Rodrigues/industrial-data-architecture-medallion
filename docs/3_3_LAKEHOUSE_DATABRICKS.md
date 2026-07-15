@@ -1,6 +1,8 @@
 
 # 3.3. Engenharia Data Lakehouse: Integração Streaming & Governança Corporativa (Unity Catalog)
 
+![Ponte de Streaming e Governança Corporativa](./Integração_Streaming_Governança_Corporativa.png)
+
 Esta etapa documenta as duas bases fundamentais que sustentam a chegada e a segurança do dado industrial na nuvem:
 1. **A Ponte de Streaming (Edge-to-Cloud):** O fluxo de tráfego contínuo que conecta nosso ecossistema de borda (Kepware + Docker Mosquitto) ao Azure Databricks em tempo real.
 2. **A Governança com Unity Catalog:** A blindagem do ambiente, isolamento de escopos e a política de controle de acesso para as camadas Medallion.
