@@ -31,7 +31,7 @@ Para facilitar a leitura e a manutenção do projeto, a documentação técnica 
 * Fluxo contínuo *end-to-end* do sensor ao CCO.
 * Exemplo prático de payloads JSON bruto e transformação em tabelas dimensionais.
 
-###  [3. Roteiro Prático de Implementação](./docs/3_PASSO_A_PASSO_PRATICO.md)
+###  [3. Roteiro Prático de Implementação](/docs)
 *Guia passo a passo para reproduzir o ambiente de desenvolvimento local ou em nuvem.*
 * Emulação de telemetria industrial via Docker (Mosquitto MQTT / Python).
 * Configuração do Gateway de borda (Node-RED / NiFi) e ingestão via PySpark / Delta Lake.
