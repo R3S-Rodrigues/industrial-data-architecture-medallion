@@ -1,6 +1,6 @@
 # 3.4. Criação da Infraestrutura do Data Lakehouse e Governança no Unity Catalog
 
-Esta etapa documenta o provisionamento e a estruturação lógica e física do armazenamento de dados utilizando o **Azure Databricks** e o **Unity Catalog**. Demonstramos aqui a criação de catálogos dedicados a ativos de dados industriais (como `oil_gas_catalog` e `catalogo_it`) e a estruturação das camadas Medallion.
+Esta etapa documenta o provisionamento e a estruturação lógica e física do armazenamento de dados utilizando o **Azure Databricks** e o **Unity Catalog**. Demonstramos aqui a criação de catálogos dedicados a ativos de dados industriais (como `oil_gas_catalog`) e a estruturação das camadas Medallion.
 
 ---
 
